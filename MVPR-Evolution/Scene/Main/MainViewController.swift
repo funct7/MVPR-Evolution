@@ -32,33 +32,11 @@ final class MainViewController: UIViewController, MainScene {
     var buttonPresenter: MainButtonPresenting { return _buttonPresenter }
     private let _buttonPresenter = MainButtonPresenter()
 
-}
-
-final class MainReactor : MainBehavior {
-    var worker: MainWorker = MainDataManager()
-}
-
-final class MainDataManager : MainWorker {
-    func fetchText() -> String{
-        sleep(3)
-        return UUID().uuidString
+    override
+    func viewDidLoad() {
+        super.viewDidLoad()
+        reactor.scene = self
     }
-}
-
-final class MainTextPresenter : MainTextPresenting {
-    weak var textLabel: UILabel!
-    func showText(_ text: String) {
-        
-    }
-}
-
-final class MainButtonPresenter : MainButtonPresenting {
-    weak var generateButton: UIButton!
     
-    weak var handler: MainButtonEventHandler!
-    
-    var isEnabled: Bool {
-        get { generateButton.isEnabled }
-        set { generateButton.isEnabled = newValue }
-    }
 }
+

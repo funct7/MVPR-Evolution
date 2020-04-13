@@ -16,10 +16,17 @@ protocol MainScene : NSObjectProtocol {
 }
 
 protocol MainBehavior : class {
+    var scene: MainScene! { get set }
     var worker: MainWorker { get set }
 }
 
+protocol MainWorkerEventHandler : class {
+    func onFetch(worker: MainWorker, text: String)
+    func onFetchFailure(worker: MainWorker, error: Error)
+}
+
 protocol MainWorker : class {
+    var handler: MainWorkerEventHandler! { get set }
     func fetchText() -> String
 }
 
@@ -32,6 +39,6 @@ protocol MainButtonEventHandler : class {
 }
 
 protocol MainButtonPresenting: class {
-    var handler: MainButtonEventHandler! { get set }
+    var handler: MainButtonEventHandler? { get set }
     var isEnabled: Bool { get set }
 }
