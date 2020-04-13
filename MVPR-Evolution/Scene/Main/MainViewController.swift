@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  MVPR-Evolution
 //
 //  Created by Josh Woomin Park on 13/04/2020.
@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override
+    func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
