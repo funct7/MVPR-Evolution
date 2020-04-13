@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		034891772443F0CA00A08075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034891762443F0CA00A08075 /* AppDelegate.swift */; };
-		034891792443F0CA00A08075 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034891782443F0CA00A08075 /* SceneDelegate.swift */; };
 		0348917B2443F0CA00A08075 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348917A2443F0CA00A08075 /* ViewController.swift */; };
 		0348917E2443F0CA00A08075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0348917C2443F0CA00A08075 /* Main.storyboard */; };
 		034891802443F0CA00A08075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0348917F2443F0CA00A08075 /* Assets.xcassets */; };
-		034891832443F0CA00A08075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034891812443F0CA00A08075 /* LaunchScreen.storyboard */; };
 		0348918E2443F0CB00A08075 /* MVPR_EvolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348918D2443F0CB00A08075 /* MVPR_EvolutionTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,11 +27,9 @@
 /* Begin PBXFileReference section */
 		034891732443F0CA00A08075 /* MVPR-Evolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVPR-Evolution.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		034891762443F0CA00A08075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		034891782443F0CA00A08075 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0348917A2443F0CA00A08075 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0348917D2443F0CA00A08075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0348917F2443F0CA00A08075 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		034891822443F0CA00A08075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		034891842443F0CA00A08075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		034891892443F0CB00A08075 /* MVPR-EvolutionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVPR-EvolutionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0348918D2443F0CB00A08075 /* MVPR_EvolutionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPR_EvolutionTests.swift; sourceTree = "<group>"; };
@@ -79,13 +75,13 @@
 		034891752443F0CA00A08075 /* MVPR-Evolution */ = {
 			isa = PBXGroup;
 			children = (
-				034891762443F0CA00A08075 /* AppDelegate.swift */,
-				034891782443F0CA00A08075 /* SceneDelegate.swift */,
-				0348917A2443F0CA00A08075 /* ViewController.swift */,
-				0348917C2443F0CA00A08075 /* Main.storyboard */,
 				0348917F2443F0CA00A08075 /* Assets.xcassets */,
-				034891812443F0CA00A08075 /* LaunchScreen.storyboard */,
-				034891842443F0CA00A08075 /* Info.plist */,
+				0348919A2443F1D100A08075 /* Extension */,
+				0348919C2443F1E900A08075 /* Global */,
+				034891992443F1CA00A08075 /* Presenter */,
+				0348919B2443F1D700A08075 /* Service */,
+				034891982443F1BF00A08075 /* Scene */,
+				0348919E2443F22400A08075 /* Other */,
 			);
 			path = "MVPR-Evolution";
 			sourceTree = "<group>";
@@ -97,6 +93,60 @@
 				0348918F2443F0CB00A08075 /* Info.plist */,
 			);
 			path = "MVPR-EvolutionTests";
+			sourceTree = "<group>";
+		};
+		034891982443F1BF00A08075 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				0348917C2443F0CA00A08075 /* Main.storyboard */,
+				0348919D2443F21500A08075 /* Main */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		034891992443F1CA00A08075 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0348919A2443F1D100A08075 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0348919B2443F1D700A08075 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0348919C2443F1E900A08075 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				034891762443F0CA00A08075 /* AppDelegate.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		0348919D2443F21500A08075 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0348917A2443F0CA00A08075 /* ViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0348919E2443F22400A08075 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				034891842443F0CA00A08075 /* Info.plist */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,7 +230,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				034891832443F0CA00A08075 /* LaunchScreen.storyboard in Resources */,
 				034891802443F0CA00A08075 /* Assets.xcassets in Resources */,
 				0348917E2443F0CA00A08075 /* Main.storyboard in Resources */,
 			);
@@ -202,7 +251,6 @@
 			files = (
 				0348917B2443F0CA00A08075 /* ViewController.swift in Sources */,
 				034891772443F0CA00A08075 /* AppDelegate.swift in Sources */,
-				034891792443F0CA00A08075 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,14 +279,6 @@
 				0348917D2443F0CA00A08075 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		034891812443F0CA00A08075 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				034891822443F0CA00A08075 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -294,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -348,7 +388,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -363,12 +403,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GQW6373J2T;
-				INFOPLIST_FILE = "MVPR-Evolution/Info.plist";
+				INFOPLIST_FILE = "${PROJECT_NAME}/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Knowre.MVPR-Evolution";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -381,12 +423,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GQW6373J2T;
-				INFOPLIST_FILE = "MVPR-Evolution/Info.plist";
+				INFOPLIST_FILE = "${PROJECT_NAME}/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Knowre.MVPR-Evolution";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
