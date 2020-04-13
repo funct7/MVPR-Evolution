@@ -22,6 +22,13 @@ final class MainViewController: UIViewController, MainScene {
         set { _buttonPresenter.generateButton = newValue }
     }
     
+    @IBOutlet
+    private var changeColorButton: UIButton! {
+        get { _buttonPresenter.changeColorButton }
+        set { _buttonPresenter.changeColorButton = newValue }
+    }
+    
+    
     // MARK: Scene
     
     let reactor: MainBehavior = MainReactor()

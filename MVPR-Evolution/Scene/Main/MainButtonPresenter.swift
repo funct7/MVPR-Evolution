@@ -20,6 +20,15 @@ final class MainButtonPresenter : BasePresenter<MainButtonEventHandler>, MainBut
         }
     }
     
+    weak var changeColorButton: UIButton! {
+        didSet {
+            changeColorButton.addTarget(
+                self,
+                action: #selector(changeColorAction),
+                for: .touchUpInside)
+        }
+    }
+    
     var isEnabled: Bool {
         get { generateButton.isEnabled }
         set { generateButton.isEnabled = newValue }
@@ -32,6 +41,11 @@ private extension MainButtonPresenter {
     @objc
     func generateAction() {
         call { $0.onTapGenerate(presenter: self) }
+    }
+    
+    @objc
+    func changeColorAction() {
+        call { $0.onTapChangeColor(presenter: self) }
     }
     
 }

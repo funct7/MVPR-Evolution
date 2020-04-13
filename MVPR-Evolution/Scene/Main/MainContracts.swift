@@ -31,11 +31,13 @@ protocol MainWorker : class {
 }
 
 protocol MainTextPresenting : class {
+    func changeColor()
     func showText(_ text: String)
 }
 
 protocol MainButtonEventHandler : class {
     func onTapGenerate(presenter: MainButtonPresenting)
+    func onTapChangeColor(presenter: MainButtonPresenting)
 }
 
 protocol MainButtonPresenting: class {

@@ -19,6 +19,7 @@
 		03DE93B02444015D001570A4 /* MainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93AF2444015D001570A4 /* MainDataManager.swift */; };
 		03DE93B224440174001570A4 /* MainTextPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93B124440174001570A4 /* MainTextPresenter.swift */; };
 		03DE93B424440187001570A4 /* MainButtonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93B324440187001570A4 /* MainButtonPresenter.swift */; };
+		03DE93B624440482001570A4 /* UpperBoundWrappingInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93B524440482001570A4 /* UpperBoundWrappingInt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		03DE93AF2444015D001570A4 /* MainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataManager.swift; sourceTree = "<group>"; };
 		03DE93B124440174001570A4 /* MainTextPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextPresenter.swift; sourceTree = "<group>"; };
 		03DE93B324440187001570A4 /* MainButtonPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonPresenter.swift; sourceTree = "<group>"; };
+		03DE93B524440482001570A4 /* UpperBoundWrappingInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperBoundWrappingInt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				034891A42443F94700A08075 /* SafeReference.swift */,
+				03DE93B524440482001570A4 /* UpperBoundWrappingInt.swift */,
 			);
 			path = ProprertyWrapper;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				034891772443F0CA00A08075 /* AppDelegate.swift in Sources */,
 				03DE93B02444015D001570A4 /* MainDataManager.swift in Sources */,
 				03DE93B424440187001570A4 /* MainButtonPresenter.swift in Sources */,
+				03DE93B624440482001570A4 /* UpperBoundWrappingInt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

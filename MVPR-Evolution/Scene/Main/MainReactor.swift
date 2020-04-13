@@ -38,7 +38,6 @@ extension MainReactor : MainWorkerEventHandler {
 extension MainReactor : MainButtonEventHandler {
     
     func onTapGenerate(presenter: MainButtonPresenting) {
-        print(#function, Thread.current)
         ui.sync { presenter.isEnabled = false }
         
         let text = scene.reactor.worker.fetchText()
@@ -47,6 +46,10 @@ extension MainReactor : MainButtonEventHandler {
             scene?.textPresenter.showText(text)
             presenter.isEnabled = true
         }
+    }
+    
+    func onTapChangeColor(presenter: MainButtonPresenting) {
+        ui.sync { [scene] in scene?.textPresenter.changeColor() }
     }
     
 }

@@ -26,18 +26,25 @@
                                 <rect key="frame" x="175" y="704" width="64" height="30"/>
                                 <state key="normal" title="Generate"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mI4-9z-Ell">
+                                <rect key="frame" x="160" y="750" width="94" height="30"/>
+                                <state key="normal" title="Change Color"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Lqh-rp-JMf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BcL-RX-8J0"/>
                             <constraint firstItem="IMl-39-d4r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="128" id="ElW-gk-7E3"/>
                             <constraint firstItem="IMl-39-d4r" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IYY-qt-aZL"/>
+                            <constraint firstItem="mI4-9z-Ell" firstAttribute="centerX" secondItem="Lqh-rp-JMf" secondAttribute="centerX" id="c1Y-1x-6d0"/>
+                            <constraint firstItem="mI4-9z-Ell" firstAttribute="top" secondItem="Lqh-rp-JMf" secondAttribute="bottom" constant="16" id="cQ7-hg-pls"/>
                             <constraint firstItem="IMl-39-d4r" firstAttribute="width" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="width" id="rRo-FL-Txa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lqh-rp-JMf" secondAttribute="bottom" constant="128" id="tw1-XE-M2m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="changeColorButton" destination="mI4-9z-Ell" id="43Z-c0-AxD"/>
                         <outlet property="generateButton" destination="Lqh-rp-JMf" id="8Zb-zq-Ody"/>
                         <outlet property="textLabel" destination="IMl-39-d4r" id="JUt-Un-MaF"/>
                     </connections>

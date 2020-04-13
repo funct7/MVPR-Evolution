@@ -8,9 +8,23 @@
 
 import UIKit
 
-final class MainTextPresenter : MainTextPresenting {
+final class MainTextPresenter {
 
     weak var textLabel: UILabel!
+    
+    private var colorList: [UIColor] = [.black, .red, .blue]
+    
+    @UpperBoundWrappingInt(value: 0, upperBound: 2)
+    private var colorIndex: Int
+    
+}
+
+extension MainTextPresenter : MainTextPresenting {
+
+    func changeColor() {
+        colorIndex += 1
+        textLabel.textColor = colorList[colorIndex]
+    }
 
     func showText(_ text: String) {
         print(#function, Thread.current)
