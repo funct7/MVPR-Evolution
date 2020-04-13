@@ -10,7 +10,7 @@ import Foundation
 
 class BasePresenter<EventHandler> {
     
-    let queue: DispatchQueue = .global(qos: .userInteractive)
+    let queue: DispatchQueue
     
     @SafeReference
     var handler: EventHandler?
@@ -18,6 +18,10 @@ class BasePresenter<EventHandler> {
     func call(_ f: @escaping (EventHandler) -> Void) {
         guard let handler = handler else { return }
         queue.async { f(handler) }
+    }
+    
+    init(queue: DispatchQueue) {
+        self.queue = queue
     }
     
 }

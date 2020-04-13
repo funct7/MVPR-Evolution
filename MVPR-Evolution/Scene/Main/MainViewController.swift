@@ -37,7 +37,7 @@ final class MainViewController: UIViewController, MainScene {
     private let _textPresenter = MainTextPresenter()
     
     var buttonPresenter: MainButtonPresenting { return _buttonPresenter }
-    private let _buttonPresenter = MainButtonPresenter()
+    private lazy var _buttonPresenter = MainButtonPresenter(queue: reactor.queue)
 
     override
     func viewDidLoad() {

@@ -15,7 +15,7 @@ protocol MainScene : NSObjectProtocol {
     var buttonPresenter: MainButtonPresenting { get }
 }
 
-protocol MainBehavior : class {
+protocol MainBehavior : BaseBehavior {
     var scene: MainScene! { get set }
     var worker: MainWorker { get set }
 }

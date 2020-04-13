@@ -12,6 +12,11 @@ private let ui = DispatchQueue.main
 
 final class MainReactor : MainBehavior {
     
+    let queue: DispatchQueue = .init(
+        label: "workerQueue.MainScene",
+        qos: .userInteractive,
+        attributes: .concurrent)
+    
     weak var scene: MainScene! {
         didSet {
             worker.handler = self

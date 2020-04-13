@@ -20,6 +20,7 @@
 		03DE93B224440174001570A4 /* MainTextPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93B124440174001570A4 /* MainTextPresenter.swift */; };
 		03DE93B424440187001570A4 /* MainButtonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93B324440187001570A4 /* MainButtonPresenter.swift */; };
 		03DE93B624440482001570A4 /* UpperBoundWrappingInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93B524440482001570A4 /* UpperBoundWrappingInt.swift */; };
+		D1E4B72C2444087200213914 /* BaseBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4B72B2444087200213914 /* BaseBehavior.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		03DE93B124440174001570A4 /* MainTextPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextPresenter.swift; sourceTree = "<group>"; };
 		03DE93B324440187001570A4 /* MainButtonPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonPresenter.swift; sourceTree = "<group>"; };
 		03DE93B524440482001570A4 /* UpperBoundWrappingInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperBoundWrappingInt.swift; sourceTree = "<group>"; };
+		D1E4B72B2444087200213914 /* BaseBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBehavior.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				0348919C2443F1E900A08075 /* Global */,
 				034891992443F1CA00A08075 /* Presenter */,
 				034891A32443F93500A08075 /* ProprertyWrapper */,
+				D1E4B72A2444086500213914 /* Protocol */,
 				0348919B2443F1D700A08075 /* Service */,
 				034891982443F1BF00A08075 /* Scene */,
 				0348919E2443F22400A08075 /* Other */,
@@ -179,6 +182,14 @@
 				03DE93B524440482001570A4 /* UpperBoundWrappingInt.swift */,
 			);
 			path = ProprertyWrapper;
+			sourceTree = "<group>";
+		};
+		D1E4B72A2444086500213914 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D1E4B72B2444087200213914 /* BaseBehavior.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +297,7 @@
 				034891A72443F96400A08075 /* BasePresenter.swift in Sources */,
 				034891A22443F61E00A08075 /* MainContracts.swift in Sources */,
 				03DE93B224440174001570A4 /* MainTextPresenter.swift in Sources */,
+				D1E4B72C2444087200213914 /* BaseBehavior.swift in Sources */,
 				0348917B2443F0CA00A08075 /* MainViewController.swift in Sources */,
 				034891772443F0CA00A08075 /* AppDelegate.swift in Sources */,
 				03DE93B02444015D001570A4 /* MainDataManager.swift in Sources */,
