@@ -17,20 +17,33 @@ struct SafeReference<T> {
             return _value
         }
         set {
-            if let newValue = newValue {
-                if Mirror(reflecting: newValue).displayStyle == .class {
-                    self._object = newValue as AnyObject
-                } else {
-                    self._value = newValue
-                }
-            } else {
-                self._object = nil
-                self._value = nil
-            }
+            setValue(newValue)
         }
     }
+
+    private weak var _object: AnyObject? = nil
     
-    private weak var _object: AnyObject?
-    private var _value: T?
+    private var _value: T? = nil
+    
+    init(value: T? = nil) {
+        setValue(value)
+    }
+    
+}
+
+private extension SafeReference {
+    
+    mutating func setValue(_ value: T?) {
+        if let value = value {
+            if Mirror(reflecting: value).displayStyle == .class {
+                self._object = value as AnyObject
+            } else {
+                self._value = value
+            }
+        } else {
+            self._object = nil
+            self._value = nil
+        }
+    }
     
 }
