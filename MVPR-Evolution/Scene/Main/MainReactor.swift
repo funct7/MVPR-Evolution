@@ -41,7 +41,7 @@ extension MainReactor : MainButtonEventHandler {
         ui.sync { presenter.isEnabled = false }
         
         let text = scene.reactor.worker.fetchText()
-        print(self, text)
+        
         ui.sync { [scene] in
             scene?.textPresenter.showText(text)
             presenter.isEnabled = true

@@ -27,7 +27,6 @@ extension MainTextPresenter : MainTextPresenting {
     }
 
     func showText(_ text: String) {
-        print(#function, Thread.current)
         textLabel.text = text
     }
 
