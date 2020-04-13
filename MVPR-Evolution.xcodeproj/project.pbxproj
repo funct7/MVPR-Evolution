@@ -12,6 +12,7 @@
 		0348917E2443F0CA00A08075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0348917C2443F0CA00A08075 /* Main.storyboard */; };
 		034891802443F0CA00A08075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0348917F2443F0CA00A08075 /* Assets.xcassets */; };
 		0348918E2443F0CB00A08075 /* MVPR_EvolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348918D2443F0CB00A08075 /* MVPR_EvolutionTests.swift */; };
+		034891A22443F61E00A08075 /* MainContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034891A12443F61E00A08075 /* MainContracts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		034891892443F0CB00A08075 /* MVPR-EvolutionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVPR-EvolutionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0348918D2443F0CB00A08075 /* MVPR_EvolutionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPR_EvolutionTests.swift; sourceTree = "<group>"; };
 		0348918F2443F0CB00A08075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		034891A12443F61E00A08075 /* MainContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContracts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 		0348919D2443F21500A08075 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				034891A12443F61E00A08075 /* MainContracts.swift */,
 				0348917A2443F0CA00A08075 /* MainViewController.swift */,
 			);
 			path = Main;
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034891A22443F61E00A08075 /* MainContracts.swift in Sources */,
 				0348917B2443F0CA00A08075 /* MainViewController.swift in Sources */,
 				034891772443F0CA00A08075 /* AppDelegate.swift in Sources */,
 			);
