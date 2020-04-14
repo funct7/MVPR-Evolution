@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MainScene : NSObjectProtocol {
+protocol MainScene : NSObjectProtocol, BaseScene {
     var reactor: MainBehavior { get }
     
     var textPresenter: MainTextPresenting { get }
@@ -35,12 +35,8 @@ protocol MainTextPresenting : class {
     func showText(_ text: String)
 }
 
-protocol MainButtonEventHandler : class {
-    func onTapGenerate(presenter: MainButtonPresenting)
-    func onTapChangeColor(presenter: MainButtonPresenting)
-}
-
 protocol MainButtonPresenting: class {
-    var handler: MainButtonEventHandler? { get set }
+    var onTapGenerate: ((MainButtonPresenting) -> Void)? { get set }
+    var onTapChangeColor: ((MainButtonPresenting) -> Void)? { get set }
     var isEnabled: Bool { get set }
 }

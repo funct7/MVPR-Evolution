@@ -8,31 +8,21 @@
 
 import UIKit
 
-final class MainButtonPresenter : BasePresenter<MainButtonEventHandler>, MainButtonPresenting {
+final class MainButtonPresenter : CallbackBindablePresenter<MainButtonPresenting>, MainButtonPresenting {
     
-    @ActionBindable(action: #selector(generateAction))
+    var onTapChangeColor: ((MainButtonPresenting) -> Void)?
+    
+    var onTapGenerate: ((MainButtonPresenting) -> Void)?
+    
+    @CallbackBindable(keyPath: \MainButtonPresenting.onTapGenerate)
     var generateButton: UIButton!
     
-    @ActionBindable(action: #selector(changeColorAction))
-    var changeColorButton: UIButton! 
+    @CallbackBindable(keyPath: \MainButtonPresenting.onTapChangeColor)
+    var changeColorButton: UIButton!
     
     var isEnabled: Bool {
         get { generateButton.isEnabled }
         set { generateButton.isEnabled = newValue }
-    }
-    
-}
-
-private extension MainButtonPresenter {
-    
-    @objc
-    func generateAction() {
-        call { $0.onTapGenerate(presenter: self) }
-    }
-    
-    @objc
-    func changeColorAction() {
-        call { $0.onTapChangeColor(presenter: self) }
     }
     
 }

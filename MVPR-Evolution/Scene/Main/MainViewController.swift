@@ -47,14 +47,3 @@ final class MainViewController: UIViewController, MainScene {
     }
     
 }
-
-extension MainScene where Self : UIViewController {
-    
-    func setTarget() {
-        Mirror(reflecting: self).children.forEach {
-            guard let base = $0.value as? TransientOutletBase<Self> else { return }
-            base.target = self
-        }
-    }
-    
-}

@@ -20,7 +20,7 @@ final class MainReactor : MainBehavior {
     weak var scene: MainScene! {
         didSet {
             worker.handler = self
-            scene.buttonPresenter.handler = self
+            setUpButtonPresenter()
         }
     }
     
@@ -40,22 +40,26 @@ extension MainReactor : MainWorkerEventHandler {
     
 }
 
-extension MainReactor : MainButtonEventHandler {
+extension MainReactor {
     
-    func onTapGenerate(presenter: MainButtonPresenting) {
-        ui.sync { presenter.isEnabled = false }
+    func setUpButtonPresenter() {
+        scene.buttonPresenter.onTapGenerate = { [scene] (presenter) in
+            guard let scene = scene else { return }
+            
+            ui.sync { presenter.isEnabled = false }
+
+            let text = scene.reactor.worker.fetchText()
+
+            ui.sync {
+                scene.textPresenter.showText(text)
+                presenter.isEnabled = true
+            }
+        }
         
-        let text = scene.reactor.worker.fetchText()
-        
-        ui.sync { [scene] in
-            scene?.textPresenter.showText(text)
-            presenter.isEnabled = true
+        scene.buttonPresenter.onTapChangeColor = { [scene] (_) in
+            ui.sync { scene?.textPresenter.changeColor() }
         }
     }
-    
-    func onTapChangeColor(presenter: MainButtonPresenting) {
-        ui.sync { [scene] in scene?.textPresenter.changeColor() }
-    }
-    
+
 }
 
