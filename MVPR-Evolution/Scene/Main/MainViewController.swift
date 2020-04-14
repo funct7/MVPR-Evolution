@@ -11,22 +11,16 @@ import UIKit
 final class MainViewController: UIViewController, MainScene {
     
     @IBOutlet
-    private var textLabel: UILabel! {
-        get { _textPresenter.textLabel }
-        set { _textPresenter.textLabel = newValue }
-    }
+    @TransientOutlet(keyPath: \MainViewController._textPresenter.textLabel)
+    private var textLabel: UILabel!
     
     @IBOutlet
-    private var generateButton: UIButton! {
-        get { _buttonPresenter.generateButton }
-        set { _buttonPresenter.generateButton = newValue }
-    }
+    @TransientOutlet(keyPath: \MainViewController._buttonPresenter.generateButton)
+    private var generateButton: UIButton!
     
     @IBOutlet
-    private var changeColorButton: UIButton! {
-        get { _buttonPresenter.changeColorButton }
-        set { _buttonPresenter.changeColorButton = newValue }
-    }
+    @TransientOutlet(keyPath: \MainViewController._buttonPresenter.changeColorButton)
+    private var changeColorButton: UIButton!
     
     
     // MARK: Scene
@@ -39,6 +33,13 @@ final class MainViewController: UIViewController, MainScene {
     var buttonPresenter: MainButtonPresenting { return _buttonPresenter }
     private lazy var _buttonPresenter = MainButtonPresenter(queue: reactor.queue)
 
+    
+    override
+    func loadView() {
+        setTarget()
+        super.loadView()
+    }
+    
     override
     func viewDidLoad() {
         super.viewDidLoad()
@@ -47,3 +48,13 @@ final class MainViewController: UIViewController, MainScene {
     
 }
 
+extension MainScene where Self : UIViewController {
+    
+    func setTarget() {
+        Mirror(reflecting: self).children.forEach {
+            guard let base = $0.value as? TransientOutletBase<Self> else { return }
+            base.target = self
+        }
+    }
+    
+}
