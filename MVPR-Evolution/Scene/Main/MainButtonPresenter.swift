@@ -10,24 +10,11 @@ import UIKit
 
 final class MainButtonPresenter : BasePresenter<MainButtonEventHandler>, MainButtonPresenting {
     
-    weak var generateButton: UIButton! {
-        didSet {
-            // TODO: Use property wrapper to auto connect target action
-            generateButton.addTarget(
-                self,
-                action: #selector(generateAction),
-                for: .touchUpInside)
-        }
-    }
+    @ActionBindable(action: #selector(generateAction))
+    var generateButton: UIButton!
     
-    weak var changeColorButton: UIButton! {
-        didSet {
-            changeColorButton.addTarget(
-                self,
-                action: #selector(changeColorAction),
-                for: .touchUpInside)
-        }
-    }
+    @ActionBindable(action: #selector(changeColorAction))
+    var changeColorButton: UIButton! 
     
     var isEnabled: Bool {
         get { generateButton.isEnabled }

@@ -15,6 +15,7 @@
 		034891A22443F61E00A08075 /* MainContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034891A12443F61E00A08075 /* MainContracts.swift */; };
 		034891A52443F94700A08075 /* SafeReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034891A42443F94700A08075 /* SafeReference.swift */; };
 		034891A72443F96400A08075 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034891A62443F96400A08075 /* BasePresenter.swift */; };
+		034994D92445353A004CABCC /* ActionBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034994D82445353A004CABCC /* ActionBindable.swift */; };
 		03DE93AE24440128001570A4 /* MainReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93AD24440128001570A4 /* MainReactor.swift */; };
 		03DE93B02444015D001570A4 /* MainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93AF2444015D001570A4 /* MainDataManager.swift */; };
 		03DE93B224440174001570A4 /* MainTextPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93B124440174001570A4 /* MainTextPresenter.swift */; };
@@ -46,6 +47,7 @@
 		034891A12443F61E00A08075 /* MainContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContracts.swift; sourceTree = "<group>"; };
 		034891A42443F94700A08075 /* SafeReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeReference.swift; sourceTree = "<group>"; };
 		034891A62443F96400A08075 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		034994D82445353A004CABCC /* ActionBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionBindable.swift; sourceTree = "<group>"; };
 		03DE93AD24440128001570A4 /* MainReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReactor.swift; sourceTree = "<group>"; };
 		03DE93AF2444015D001570A4 /* MainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataManager.swift; sourceTree = "<group>"; };
 		03DE93B124440174001570A4 /* MainTextPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextPresenter.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				034891A42443F94700A08075 /* SafeReference.swift */,
 				03DE93B524440482001570A4 /* UpperBoundWrappingInt.swift */,
+				034994D82445353A004CABCC /* ActionBindable.swift */,
 			);
 			path = ProprertyWrapper;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			files = (
 				034891A52443F94700A08075 /* SafeReference.swift in Sources */,
 				03DE93AE24440128001570A4 /* MainReactor.swift in Sources */,
+				034994D92445353A004CABCC /* ActionBindable.swift in Sources */,
 				034891A72443F96400A08075 /* BasePresenter.swift in Sources */,
 				034891A22443F61E00A08075 /* MainContracts.swift in Sources */,
 				03DE93B224440174001570A4 /* MainTextPresenter.swift in Sources */,

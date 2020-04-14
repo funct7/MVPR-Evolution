@@ -12,7 +12,7 @@ class BasePresenter<EventHandler> {
     
     let queue: DispatchQueue
     
-    @SafeReference
+    @SafeReference(value: nil)
     var handler: EventHandler?
     
     func call(_ f: @escaping (EventHandler) -> Void) {
@@ -22,6 +22,10 @@ class BasePresenter<EventHandler> {
     
     init(queue: DispatchQueue) {
         self.queue = queue
+        
+        Mirror(reflecting: self).children.forEach {
+            ($0.value as? TargetSettable)?.target = self
+        }
     }
     
 }
