@@ -11,15 +11,15 @@ import UIKit
 final class MainViewController: UIViewController, MainScene {
     
     @IBOutlet
-    @TransientOutlet(keyPath: \MainViewController._textPresenter.textLabel)
+    @Transitive(keyPath: \MainViewController._textPresenter.textLabel)
     private var textLabel: UILabel!
     
     @IBOutlet
-    @TransientOutlet(keyPath: \MainViewController._buttonPresenter.generateButton)
+    @Transitive(keyPath: \MainViewController._buttonPresenter.generateButton)
     private var generateButton: UIButton!
     
     @IBOutlet
-    @TransientOutlet(keyPath: \MainViewController._buttonPresenter.changeColorButton)
+    @Transitive(keyPath: \MainViewController._buttonPresenter.changeColorButton)
     private var changeColorButton: UIButton!
     
     

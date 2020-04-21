@@ -1,5 +1,5 @@
 //
-//  TransientOutlet.swift
+//  Transitive.swift
 //  MVPR-Evolution
 //
 //  Created by Josh Woomin Park on 14/04/2020.
@@ -15,14 +15,14 @@ class TransientOutletBase<T : NSObjectProtocol> {
 }
 
 @propertyWrapper
-class TransientOutlet<T : NSObjectProtocol, View> : TransientOutletBase<T> {
+class Transitive<T : NSObjectProtocol, View> : TransientOutletBase<T> {
     
     var wrappedValue: View! {
         get { target![keyPath: keyPath] }
         set { target![keyPath: keyPath] = newValue }
     }
     
-    var projectedValue: TransientOutlet<T, View> { self }
+    var projectedValue: Transitive<T, View> { self }
     
     private let keyPath: ReferenceWritableKeyPath<T, View?>
     
