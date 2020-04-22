@@ -18,6 +18,9 @@ struct Implementation<T, P> {
     
     var projectedValue: T { wrappedValue as! T }
     
+    /**
+     - Precondition: `T : P`
+     */
     init(_ instance: T) {
         self.wrappedValue = instance as! P
     }
