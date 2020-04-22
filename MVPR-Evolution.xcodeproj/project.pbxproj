@@ -20,12 +20,12 @@
 		0355C60C244FBCEA00486874 /* LateInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355C60B244FBCEA00486874 /* LateInit.swift */; };
 		0355C60E244FBCF900486874 /* SafeLateInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355C60D244FBCF900486874 /* SafeLateInit.swift */; };
 		0355C610244FBD2200486874 /* Implementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355C60F244FBD2200486874 /* Implementation.swift */; };
-		0355C612244FBDA100486874 /* BaseBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355C611244FBDA100486874 /* BaseBehavior.swift */; };
 		03DE93AE24440128001570A4 /* MainReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93AD24440128001570A4 /* MainReactor.swift */; };
 		03DE93B02444015D001570A4 /* MainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93AF2444015D001570A4 /* MainDataManager.swift */; };
 		03DE93B224440174001570A4 /* MainTextPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93B124440174001570A4 /* MainTextPresenter.swift */; };
 		03DE93B424440187001570A4 /* MainButtonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93B324440187001570A4 /* MainButtonPresenter.swift */; };
 		03DE93B624440482001570A4 /* UpperBoundWrappingInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93B524440482001570A4 /* UpperBoundWrappingInt.swift */; };
+		D161A9D124502954007FF57C /* Dispatchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D161A9D024502954007FF57C /* Dispatchable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,12 +56,12 @@
 		0355C60B244FBCEA00486874 /* LateInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateInit.swift; sourceTree = "<group>"; };
 		0355C60D244FBCF900486874 /* SafeLateInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeLateInit.swift; sourceTree = "<group>"; };
 		0355C60F244FBD2200486874 /* Implementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Implementation.swift; sourceTree = "<group>"; };
-		0355C611244FBDA100486874 /* BaseBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBehavior.swift; sourceTree = "<group>"; };
 		03DE93AD24440128001570A4 /* MainReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReactor.swift; sourceTree = "<group>"; };
 		03DE93AF2444015D001570A4 /* MainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataManager.swift; sourceTree = "<group>"; };
 		03DE93B124440174001570A4 /* MainTextPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextPresenter.swift; sourceTree = "<group>"; };
 		03DE93B324440187001570A4 /* MainButtonPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonPresenter.swift; sourceTree = "<group>"; };
 		03DE93B524440482001570A4 /* UpperBoundWrappingInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperBoundWrappingInt.swift; sourceTree = "<group>"; };
+		D161A9D024502954007FF57C /* Dispatchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispatchable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +210,7 @@
 		D1E4B72A2444086500213914 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				0355C611244FBDA100486874 /* BaseBehavior.swift */,
+				D161A9D024502954007FF57C /* Dispatchable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -316,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				034891A52443F94700A08075 /* SafeReference.swift in Sources */,
+				D161A9D124502954007FF57C /* Dispatchable.swift in Sources */,
 				03DE93AE24440128001570A4 /* MainReactor.swift in Sources */,
 				0355C610244FBD2200486874 /* Implementation.swift in Sources */,
 				034994D92445353A004CABCC /* ActionBindable.swift in Sources */,
@@ -323,7 +324,6 @@
 				034891A72443F96400A08075 /* BasePresenter.swift in Sources */,
 				034891A22443F61E00A08075 /* MainContracts.swift in Sources */,
 				03DE93B224440174001570A4 /* MainTextPresenter.swift in Sources */,
-				0355C612244FBDA100486874 /* BaseBehavior.swift in Sources */,
 				0348917B2443F0CA00A08075 /* MainViewController.swift in Sources */,
 				034994DB24454965004CABCC /* Transitive.swift in Sources */,
 				034891772443F0CA00A08075 /* AppDelegate.swift in Sources */,

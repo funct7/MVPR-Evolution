@@ -22,7 +22,6 @@ final class MainViewController: UIViewController, MainScene {
     @Transitive(keyPath: \MainViewController.$buttonPresenter.changeColorButton)
     private var changeColorButton: UIButton!
     
-    
     // MARK: Scene
     
     @Implementation(MainReactor())
@@ -36,7 +35,18 @@ final class MainViewController: UIViewController, MainScene {
     
     override
     func loadView() {
-        setUp()
+        $textLabel.target = self
+        $generateButton.target = self
+        $changeColorButton.target = self
+        
+        let queue: DispatchQueue = .init(
+            label: "workerQueue.MainScene",
+            qos: .userInteractive,
+            attributes: .concurrent)
+        
+        $reactor.queue = queue
+        $buttonPresenter.queue = queue
+        
         super.loadView()
     }
     
@@ -44,17 +54,6 @@ final class MainViewController: UIViewController, MainScene {
     func viewDidLoad() {
         super.viewDidLoad()
         reactor.scene = self
-    }
-    
-}
-
-extension MainScene where Self : UIViewController {
-    
-    func setUp() {
-        Mirror(reflecting: self).children.forEach {
-            if let base = $0.value as? TransientOutletBase<Self> { base.target = self }
-            if let dispatchable = $0.value as? Dispatchable { dispatchable.queue = reactor.queue }
-        }
     }
     
 }

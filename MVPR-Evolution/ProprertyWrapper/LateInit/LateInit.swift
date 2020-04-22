@@ -10,6 +10,7 @@ import Foundation
 
 @propertyWrapper
 struct LateInit<T> {
+
     var wrappedValue: T {
         get { projectedValue }
         set { projectedValue = newValue }

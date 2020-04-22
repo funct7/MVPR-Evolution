@@ -30,9 +30,3 @@ class BasePresenter<EventHandler> : Dispatchable {
     }
     
 }
-
-protocol Dispatchable : class {
-    
-    var queue: DispatchQueue { get set }
-    
-}

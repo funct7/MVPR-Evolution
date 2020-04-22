@@ -8,15 +8,18 @@
 
 import Foundation
 
+/**
+ - Invariant: `T : P`
+ */
 @propertyWrapper
 struct Implementation<T, P> {
     
-    var wrappedValue: P { projectedValue as! P }
+    var wrappedValue: P
     
-    var projectedValue: T
+    var projectedValue: T { wrappedValue as! T }
     
     init(_ instance: T) {
-        self.projectedValue = instance
+        self.wrappedValue = instance as! P
     }
     
 }
