@@ -8,9 +8,10 @@
 
 import Foundation
 
-class BasePresenter<EventHandler> {
+class BasePresenter<EventHandler> : Dispatchable {
     
-    let queue: DispatchQueue
+    @LateInit
+    var queue: DispatchQueue
     
     @SafeReference(value: nil)
     var handler: EventHandler?
@@ -20,12 +21,18 @@ class BasePresenter<EventHandler> {
         queue.async { f(handler) }
     }
     
-    init(queue: DispatchQueue) {
-        self.queue = queue
+    init(queue: DispatchQueue? = nil) {
+        if let queue = queue { self.queue = queue }
         
         Mirror(reflecting: self).children.forEach {
             ($0.value as? TargetSettable)?.target = self
         }
     }
+    
+}
+
+protocol Dispatchable : class {
+    
+    var queue: DispatchQueue { get set }
     
 }

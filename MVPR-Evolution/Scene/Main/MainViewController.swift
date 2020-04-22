@@ -11,32 +11,32 @@ import UIKit
 final class MainViewController: UIViewController, MainScene {
     
     @IBOutlet
-    @Transitive(keyPath: \MainViewController._textPresenter.textLabel)
+    @Transitive(keyPath: \MainViewController.$textPresenter.textLabel)
     private var textLabel: UILabel!
     
     @IBOutlet
-    @Transitive(keyPath: \MainViewController._buttonPresenter.generateButton)
+    @Transitive(keyPath: \MainViewController.$buttonPresenter.generateButton)
     private var generateButton: UIButton!
     
     @IBOutlet
-    @Transitive(keyPath: \MainViewController._buttonPresenter.changeColorButton)
+    @Transitive(keyPath: \MainViewController.$buttonPresenter.changeColorButton)
     private var changeColorButton: UIButton!
     
     
     // MARK: Scene
     
-    let reactor: MainBehavior = MainReactor()
+    @Implementation(MainReactor())
+    var reactor: MainBehavior
     
-    var textPresenter: MainTextPresenting { return _textPresenter }
-    private let _textPresenter = MainTextPresenter()
+    @Implementation(MainTextPresenter())
+    var textPresenter: MainTextPresenting
     
-    var buttonPresenter: MainButtonPresenting { return _buttonPresenter }
-    private lazy var _buttonPresenter = MainButtonPresenter(queue: reactor.queue)
-
+    @Implementation(MainButtonPresenter())
+    var buttonPresenter: MainButtonPresenting
     
     override
     func loadView() {
-        setTarget()
+        setUp()
         super.loadView()
     }
     
@@ -50,10 +50,10 @@ final class MainViewController: UIViewController, MainScene {
 
 extension MainScene where Self : UIViewController {
     
-    func setTarget() {
+    func setUp() {
         Mirror(reflecting: self).children.forEach {
-            guard let base = $0.value as? TransientOutletBase<Self> else { return }
-            base.target = self
+            if let base = $0.value as? TransientOutletBase<Self> { base.target = self }
+            if let dispatchable = $0.value as? Dispatchable { dispatchable.queue = reactor.queue }
         }
     }
     
