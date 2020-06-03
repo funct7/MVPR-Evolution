@@ -23,6 +23,8 @@
 		03E4B9AA24886B8E0099DCBA /* Implementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4B9A924886B8E0099DCBA /* Implementation.swift */; };
 		03E4B9AC24886C590099DCBA /* LateInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4B9AB24886C590099DCBA /* LateInit.swift */; };
 		03E4B9AE24886C6A0099DCBA /* SafeLateInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4B9AD24886C6A0099DCBA /* SafeLateInit.swift */; };
+		03E4B9B224886CF90099DCBA /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4B9B124886CF90099DCBA /* Dispatcher.swift */; };
+		03E4B9B424886D1F0099DCBA /* AsyncResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4B9B324886D1F0099DCBA /* AsyncResult.swift */; };
 		D1E4B72C2444087200213914 /* BaseBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4B72B2444087200213914 /* BaseBehavior.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		03E4B9A924886B8E0099DCBA /* Implementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Implementation.swift; sourceTree = "<group>"; };
 		03E4B9AB24886C590099DCBA /* LateInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateInit.swift; sourceTree = "<group>"; };
 		03E4B9AD24886C6A0099DCBA /* SafeLateInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeLateInit.swift; sourceTree = "<group>"; };
+		03E4B9B124886CF90099DCBA /* Dispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
+		03E4B9B324886D1F0099DCBA /* AsyncResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncResult.swift; sourceTree = "<group>"; };
 		D1E4B72B2444087200213914 /* BaseBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBehavior.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +111,7 @@
 				D1E4B72A2444086500213914 /* Protocol */,
 				0348919B2443F1D700A08075 /* Service */,
 				034891982443F1BF00A08075 /* Scene */,
+				03E4B9B024886CF00099DCBA /* Type */,
 				0348919E2443F22400A08075 /* Other */,
 			);
 			path = "MVPR-Evolution";
@@ -199,6 +204,15 @@
 				03E4B9AD24886C6A0099DCBA /* SafeLateInit.swift */,
 			);
 			path = LateInit;
+			sourceTree = "<group>";
+		};
+		03E4B9B024886CF00099DCBA /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				03E4B9B124886CF90099DCBA /* Dispatcher.swift */,
+				03E4B9B324886D1F0099DCBA /* AsyncResult.swift */,
+			);
+			path = Type;
 			sourceTree = "<group>";
 		};
 		D1E4B72A2444086500213914 /* Protocol */ = {
@@ -318,11 +332,13 @@
 				D1E4B72C2444087200213914 /* BaseBehavior.swift in Sources */,
 				0348917B2443F0CA00A08075 /* MainViewController.swift in Sources */,
 				034891772443F0CA00A08075 /* AppDelegate.swift in Sources */,
+				03E4B9B424886D1F0099DCBA /* AsyncResult.swift in Sources */,
 				03E4B9AC24886C590099DCBA /* LateInit.swift in Sources */,
 				03DE93B02444015D001570A4 /* MainDataManager.swift in Sources */,
 				03DE93B424440187001570A4 /* MainButtonPresenter.swift in Sources */,
 				03E4B9AE24886C6A0099DCBA /* SafeLateInit.swift in Sources */,
 				03DE93B624440482001570A4 /* UpperBoundWrappingInt.swift in Sources */,
+				03E4B9B224886CF90099DCBA /* Dispatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
