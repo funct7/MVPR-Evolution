@@ -21,6 +21,8 @@
 		03DE93B424440187001570A4 /* MainButtonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93B324440187001570A4 /* MainButtonPresenter.swift */; };
 		03DE93B624440482001570A4 /* UpperBoundWrappingInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93B524440482001570A4 /* UpperBoundWrappingInt.swift */; };
 		03E4B9AA24886B8E0099DCBA /* Implementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4B9A924886B8E0099DCBA /* Implementation.swift */; };
+		03E4B9AC24886C590099DCBA /* LateInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4B9AB24886C590099DCBA /* LateInit.swift */; };
+		03E4B9AE24886C6A0099DCBA /* SafeLateInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4B9AD24886C6A0099DCBA /* SafeLateInit.swift */; };
 		D1E4B72C2444087200213914 /* BaseBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4B72B2444087200213914 /* BaseBehavior.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		03DE93B324440187001570A4 /* MainButtonPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonPresenter.swift; sourceTree = "<group>"; };
 		03DE93B524440482001570A4 /* UpperBoundWrappingInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperBoundWrappingInt.swift; sourceTree = "<group>"; };
 		03E4B9A924886B8E0099DCBA /* Implementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Implementation.swift; sourceTree = "<group>"; };
+		03E4B9AB24886C590099DCBA /* LateInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateInit.swift; sourceTree = "<group>"; };
+		03E4B9AD24886C6A0099DCBA /* SafeLateInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeLateInit.swift; sourceTree = "<group>"; };
 		D1E4B72B2444087200213914 /* BaseBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBehavior.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,11 +184,21 @@
 		034891A32443F93500A08075 /* ProprertyWrapper */ = {
 			isa = PBXGroup;
 			children = (
+				03E4B9AF24886C990099DCBA /* LateInit */,
 				034891A42443F94700A08075 /* SafeReference.swift */,
 				03DE93B524440482001570A4 /* UpperBoundWrappingInt.swift */,
 				03E4B9A924886B8E0099DCBA /* Implementation.swift */,
 			);
 			path = ProprertyWrapper;
+			sourceTree = "<group>";
+		};
+		03E4B9AF24886C990099DCBA /* LateInit */ = {
+			isa = PBXGroup;
+			children = (
+				03E4B9AB24886C590099DCBA /* LateInit.swift */,
+				03E4B9AD24886C6A0099DCBA /* SafeLateInit.swift */,
+			);
+			path = LateInit;
 			sourceTree = "<group>";
 		};
 		D1E4B72A2444086500213914 /* Protocol */ = {
@@ -304,8 +318,10 @@
 				D1E4B72C2444087200213914 /* BaseBehavior.swift in Sources */,
 				0348917B2443F0CA00A08075 /* MainViewController.swift in Sources */,
 				034891772443F0CA00A08075 /* AppDelegate.swift in Sources */,
+				03E4B9AC24886C590099DCBA /* LateInit.swift in Sources */,
 				03DE93B02444015D001570A4 /* MainDataManager.swift in Sources */,
 				03DE93B424440187001570A4 /* MainButtonPresenter.swift in Sources */,
+				03E4B9AE24886C6A0099DCBA /* SafeLateInit.swift in Sources */,
 				03DE93B624440482001570A4 /* UpperBoundWrappingInt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
