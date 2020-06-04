@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol BaseScene : class {
+public protocol BaseScene : class {
     
     func displayError(_ error: Error)
     
@@ -18,7 +18,7 @@ protocol BaseScene : class {
     
 }
 
-extension BaseScene where Self : UIViewController {
+public extension BaseScene where Self : UIViewController {
     
     func displayError(_ error: Error) {
         _displayError(error, result: nil)

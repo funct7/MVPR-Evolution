@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Base
 
 final class MainViewController: UIViewController, MainScene {
     

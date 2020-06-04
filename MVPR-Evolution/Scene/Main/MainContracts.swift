@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Base
 
 protocol MainScene : BaseScene {
     var reactor: MainBehavior { get }

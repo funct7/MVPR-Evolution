@@ -9,9 +9,9 @@
 import Foundation
 
 @propertyWrapper
-struct SafeReference<T> {
+public struct SafeReference<T> {
     
-    var wrappedValue: T? {
+    public var wrappedValue: T? {
         get {
             if let object = _object as? T { return object }
             return _value
@@ -25,7 +25,7 @@ struct SafeReference<T> {
     
     private var _value: T? = nil
     
-    init(value: T? = nil) {
+    public init(value: T? = nil) {
         setValue(value)
     }
     

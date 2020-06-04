@@ -16,21 +16,21 @@ import Foundation
  * 또한 `willSet/didSet`에 넘겨지는 값을 사용하고 직접 property에 접근해서는 안 됨.
  */
 @propertyWrapper
-struct SafeLateInit<T> {
+public struct SafeLateInit<T> {
     
-    var wrappedValue: T {
+    public var wrappedValue: T {
         get { projectedValue }
         set { projectedValue = newValue }
     }
     
     @SafeReference(value: nil)
-    var projectedValue: T! {
+    public var projectedValue: T! {
         willSet { willSet?(projectedValue, newValue) }
         didSet { didSet?(oldValue, projectedValue) }
     }
     
-    var willSet: ((T?, T) -> Void)?
-    var didSet: ((T?, T) -> Void)?
+    public var willSet: ((T?, T) -> Void)?
+    public var didSet: ((T?, T) -> Void)?
     
-    init() { }
+    public init() { }
 }

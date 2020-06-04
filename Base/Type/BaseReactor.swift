@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol BaseReactorType : class {
+public protocol BaseReactorType : class {
     
     var dispatcher: Dispatcher { get }
     
 }
 
-extension BaseReactorType {
+public extension BaseReactorType {
     
     func call(_ block: @escaping (Self) -> Void) {
         dispatcher.run { block(self) }
@@ -22,8 +22,10 @@ extension BaseReactorType {
     
 }
 
-class BaseReactor : BaseReactorType {
+open class BaseReactor : BaseReactorType {
     
-    let dispatcher = Dispatcher(worker: .global(qos: .userInteractive))
+    public let dispatcher = Dispatcher(worker: .global(qos: .userInteractive))
+    
+    public init() { }
     
 }

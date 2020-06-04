@@ -8,21 +8,21 @@
 
 import Foundation
 
-struct Dispatcher {
+public struct Dispatcher {
     
-    let worker: DispatchQueue
-    let ui = DispatchQueue.main
+    public let worker: DispatchQueue
+    public let ui = DispatchQueue.main
     
-    func run(_ block: @escaping () -> Void) {
+    public func run(_ block: @escaping () -> Void) {
         worker.async { block() }
     }
     
-    func run<T>(with input: T, _ block: @escaping (T) -> Void) {
+    public func run<T>(with input: T, _ block: @escaping (T) -> Void) {
         run { block(input) }
     }
     
     @discardableResult
-    func run<T, U>(
+    public func run<T, U>(
         with input: T,
         _ block: @escaping (T, AsyncResult<U>) -> Void)
         -> U
@@ -30,16 +30,16 @@ struct Dispatcher {
         return _runBlocking(input: input, queue: worker, block: block)
     }
     
-    func ui(_ block: @escaping () -> Void) {
+    public func ui(_ block: @escaping () -> Void) {
         ui.async { block() }
     }
     
-    func ui<T>(with input: T, _ block: @escaping (T) -> Void) {
+    public func ui<T>(with input: T, _ block: @escaping (T) -> Void) {
         ui { block(input) }
     }
     
     @discardableResult
-    func ui<T, U>(
+    public func ui<T, U>(
         with input: T,
         _ block: @escaping (T, AsyncResult<U>) -> Void)
         -> U

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol BaseEventHandler : class {
+public protocol BaseEventHandler : class {
     
     func call(_ block: @escaping (Self) -> Void)
     

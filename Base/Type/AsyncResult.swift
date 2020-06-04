@@ -8,15 +8,15 @@
 
 import Foundation
 
-class AsyncResult<T> {
+public class AsyncResult<T> {
     
     private var onResult: (T) -> Void
     
-    init(onResult: @escaping (T) -> Void) {
+    public init(onResult: @escaping (T) -> Void) {
         self.onResult = onResult
     }
     
-    func done(result: T) {
+    public func done(result: T) {
         onResult(result)
     }
     

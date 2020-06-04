@@ -12,16 +12,16 @@ import Foundation
  - Invariant: `T : P`
  */
 @propertyWrapper
-struct Implementation<T, P> {
+public struct Implementation<T, P> {
     
-    var wrappedValue: P
+    public var wrappedValue: P
     
-    var projectedValue: T { wrappedValue as! T }
+    public var projectedValue: T { wrappedValue as! T }
     
     /**
      - Precondition: `T : P`
      */
-    init(_ instance: T) {
+    public init(_ instance: T) {
         self.wrappedValue = instance as! P
     }
     
