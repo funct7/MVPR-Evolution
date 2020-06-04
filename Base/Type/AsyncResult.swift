@@ -24,7 +24,7 @@ public class AsyncResult<T> {
 
 extension AsyncResult {
     
-    static func with<U>(
+    static public func with<U>(
         _ params: U,
         on queue: DispatchQueue = .main,
         _ block: @escaping (AsyncResult<T>, U) -> Void) -> T
