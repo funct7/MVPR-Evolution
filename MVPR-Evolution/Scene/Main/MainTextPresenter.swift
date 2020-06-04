@@ -10,24 +10,39 @@ import UIKit
 
 final class MainTextPresenter {
 
-    weak var textLabel: UILabel!
+    weak var observeResultLabel: UILabel!
+    weak var fetchResultLabel: UILabel!
+        
+    // MARK: Private
     
     private var colorList: [UIColor] = [.black, .red, .blue]
     
     @UpperBoundWrappingInt(value: 0, upperBound: 2)
     private var colorIndex: Int
-    
+
 }
 
 extension MainTextPresenter : MainTextPresenting {
-
-    func changeColor() {
+    
+    func showObserveResult(_ text: String) {
+        observeResultLabel.text = text
+    }
+    
+    func showFetchResult(_ text: String) {
+        fetchResultLabel.text = text
+    }
+    
+    func changeTextColor() {
         colorIndex += 1
-        textLabel.textColor = colorList[colorIndex]
+        
+        observeResultLabel.textColor = selectedColor()
+        fetchResultLabel.textColor = selectedColor()
     }
+    
+}
 
-    func showText(_ text: String) {
-        textLabel.text = text
-    }
-
+private extension MainTextPresenter {
+    
+    func selectedColor() -> UIColor { colorList[colorIndex] }
+    
 }

@@ -9,14 +9,29 @@
 import Foundation
 
 final class MainDataManager : MainWorker {
-
+    
     weak var handler: MainWorkerEventHandler!
     
-    func fetchText() -> String {
-        sleep(3)
-        let result = UUID().uuidString
-        handler.onFetch(worker: self, text: result)
-        return result
+    func observe() throws {
+        timer = Timer(
+            timeInterval: 1,
+            repeats: true)
+        { [weak self] (_) in
+            self?.handler.call { $0.onUpdate(worker: self!, text: UUID().uuidString) }
+        }
+        
+        RunLoop.main.add(timer!, forMode: .default)
     }
-
+    
+    func fetchUUID() throws -> String {
+        sleep(3)
+        return UUID().uuidString
+    }
+    
+    // MARK: Private
+    
+    private var timer: Timer? {
+        willSet { timer?.invalidate() }
+    }
+    
 }

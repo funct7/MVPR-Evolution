@@ -22,26 +22,32 @@ protocol MainBehavior : BaseReactorType {
 }
 
 protocol MainWorkerEventHandler : BaseEventHandler {
-    func onFetch(worker: MainWorker, text: String)
-    func onFetchFailure(worker: MainWorker, error: Error)
+    /**
+     `observe()`의 결과를 받는 콜백함수.
+     */
+    func onUpdate(worker: MainWorker, text: String)
 }
 
 protocol MainWorker : class {
     var handler: MainWorkerEventHandler! { get set }
-    func fetchText() -> String
+    
+    func observe() throws
+    func fetchUUID() throws -> String
 }
 
 protocol MainTextPresenting : class {
-    func changeColor()
-    func showText(_ text: String)
+    func showObserveResult(_ text: String)
+    func showFetchResult(_ text: String)
+    func changeTextColor()
 }
 
 protocol MainButtonEventHandler : BaseEventHandler {
-    func onTapGenerate(presenter: MainButtonPresenting)
+    func onTapObserve(presenter: MainButtonPresenting)
+    func onTapRequest(presenter: MainButtonPresenting)
     func onTapChangeColor(presenter: MainButtonPresenting)
 }
 
 protocol MainButtonPresenting: class {
     var handler: MainButtonEventHandler? { get set }
-    var isEnabled: Bool { get set }
+    var isRequestEnabled: Bool { get set }
 }

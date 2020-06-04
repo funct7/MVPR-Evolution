@@ -24,31 +24,39 @@ final class MainReactor : BaseReactor, MainBehavior {
 
 extension MainReactor : MainWorkerEventHandler {
     
-    func onFetch(worker: MainWorker, text: String) {
-        print("fetched text \(text)")
-    }
-    
-    func onFetchFailure(worker: MainWorker, error: Error) {
-        print("fetched failed \(error)")
+    func onUpdate(worker: MainWorker, text: String) {
+        dispatcher.ui(with: scene) { $0?.textPresenter.showObserveResult(text) }
     }
     
 }
 
 extension MainReactor : MainButtonEventHandler {
     
-    func onTapGenerate(presenter: MainButtonPresenting) {
-        dispatcher.ui { presenter.isEnabled = false }
+    func onTapObserve(presenter: MainButtonPresenting) {
+        do {
+            try worker.observe()
+        } catch {
+            dispatcher.ui(with: scene) { $0?.displayError(error) }
+        }
+    }
+    
+    func onTapRequest(presenter: MainButtonPresenting) {
+        dispatcher.ui { presenter.isRequestEnabled = false }
+        defer { dispatcher.ui { presenter.isRequestEnabled = true } }
         
-        let text = scene.reactor.worker.fetchText()
-        
-        dispatcher.ui { [scene] in
-            scene?.textPresenter.showText(text)
-            presenter.isEnabled = true
+        do {
+            let text = try scene.reactor.worker.fetchUUID()
+            
+            dispatcher.ui(with: scene) {
+                $0?.textPresenter.showFetchResult(text)
+            }
+        } catch {
+            dispatcher.ui(with: scene) { $0?.displayError(error) }
         }
     }
     
     func onTapChangeColor(presenter: MainButtonPresenting) {
-        dispatcher.ui(with: scene) { $0.textPresenter.changeColor() }
+        dispatcher.ui(with: scene) { $0?.textPresenter.changeTextColor() }
     }
     
 }

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,37 +17,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMl-39-d4r">
-                                <rect key="frame" x="186" y="172" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqh-rp-JMf">
-                                <rect key="frame" x="175" y="704" width="64" height="30"/>
-                                <state key="normal" title="Generate"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mI4-9z-Ell">
-                                <rect key="frame" x="160" y="750" width="94" height="30"/>
-                                <state key="normal" title="Change Color"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iad-K3-h48">
+                                <rect key="frame" x="87" y="108" width="240" height="118"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Observe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMl-39-d4r">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k51-zF-0aG">
+                                        <rect key="frame" x="0.0" y="22.5" width="240" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mX8-JW-YY8">
+                                        <rect key="frame" x="0.0" y="51" width="240" height="16"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="vZv-N2-319"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQe-Lr-Mgu">
+                                        <rect key="frame" x="0.0" y="75" width="240" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHw-mD-5Rf">
+                                        <rect key="frame" x="0.0" y="97.5" width="240" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BGZ-mV-Qhe">
+                                <rect key="frame" x="103.5" y="676" width="207" height="106"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgs-Qa-dzM">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
+                                        <state key="normal" title="Observe"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqh-rp-JMf">
+                                        <rect key="frame" x="0.0" y="38" width="207" height="30"/>
+                                        <state key="normal" title="Request"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mI4-9z-Ell">
+                                        <rect key="frame" x="0.0" y="76" width="207" height="30"/>
+                                        <state key="normal" title="Change Background"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Lqh-rp-JMf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BcL-RX-8J0"/>
-                            <constraint firstItem="IMl-39-d4r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="128" id="ElW-gk-7E3"/>
-                            <constraint firstItem="IMl-39-d4r" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IYY-qt-aZL"/>
-                            <constraint firstItem="mI4-9z-Ell" firstAttribute="centerX" secondItem="Lqh-rp-JMf" secondAttribute="centerX" id="c1Y-1x-6d0"/>
-                            <constraint firstItem="mI4-9z-Ell" firstAttribute="top" secondItem="Lqh-rp-JMf" secondAttribute="bottom" constant="16" id="cQ7-hg-pls"/>
-                            <constraint firstItem="IMl-39-d4r" firstAttribute="width" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="width" id="rRo-FL-Txa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lqh-rp-JMf" secondAttribute="bottom" constant="128" id="tw1-XE-M2m"/>
+                            <constraint firstItem="iad-K3-h48" firstAttribute="width" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" id="CRp-no-tAN"/>
+                            <constraint firstItem="iad-K3-h48" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="ELU-NB-44c"/>
+                            <constraint firstItem="BGZ-mV-Qhe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="El7-tP-IHS"/>
+                            <constraint firstItem="BGZ-mV-Qhe" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" id="aq1-ca-tGh"/>
+                            <constraint firstItem="iad-K3-h48" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mbR-wL-K4d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BGZ-mV-Qhe" secondAttribute="bottom" constant="80" id="sZC-GL-cSd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="changeColorButton" destination="mI4-9z-Ell" id="43Z-c0-AxD"/>
-                        <outlet property="generateButton" destination="Lqh-rp-JMf" id="8Zb-zq-Ody"/>
-                        <outlet property="textLabel" destination="IMl-39-d4r" id="JUt-Un-MaF"/>
+                        <outlet property="fetchResultLabel" destination="gHw-mD-5Rf" id="oDf-Cj-WV3"/>
+                        <outlet property="observeButton" destination="Zgs-Qa-dzM" id="AGd-f0-5La"/>
+                        <outlet property="observeResultLabel" destination="k51-zF-0aG" id="Mbi-Uq-pcT"/>
+                        <outlet property="requestButton" destination="Lqh-rp-JMf" id="8Zb-zq-Ody"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

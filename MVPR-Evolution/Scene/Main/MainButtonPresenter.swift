@@ -12,12 +12,21 @@ final class MainButtonPresenter : MainButtonPresenting {
     
     weak var handler: MainButtonEventHandler?
     
-    weak var generateButton: UIButton! {
+    weak var observeButton: UIButton! {
+        didSet {
+            observeButton.addTarget(
+                self,
+                action: #selector(observeAction),
+                for: .touchUpInside)
+        }
+    }
+    
+    weak var requestButton: UIButton! {
         didSet {
             // TODO: Use property wrapper to auto connect target action
-            generateButton.addTarget(
+            requestButton.addTarget(
                 self,
-                action: #selector(generateAction),
+                action: #selector(requestAction),
                 for: .touchUpInside)
         }
     }
@@ -31,9 +40,9 @@ final class MainButtonPresenter : MainButtonPresenting {
         }
     }
     
-    var isEnabled: Bool {
-        get { generateButton.isEnabled }
-        set { generateButton.isEnabled = newValue }
+    var isRequestEnabled: Bool {
+        get { requestButton.isEnabled }
+        set { requestButton.isEnabled = newValue }
     }
     
 }
@@ -41,8 +50,13 @@ final class MainButtonPresenter : MainButtonPresenting {
 private extension MainButtonPresenter {
     
     @objc
-    func generateAction() {
-        handler?.call { $0.onTapGenerate(presenter: self) }
+    func observeAction() {
+        handler?.call { $0.onTapObserve(presenter: self) }
+    }
+    
+    @objc
+    func requestAction() {
+        handler?.call { $0.onTapRequest(presenter: self) }
     }
     
     @objc

@@ -12,15 +12,27 @@ import Base
 final class MainViewController: UIViewController, MainScene {
     
     @IBOutlet
-    private var textLabel: UILabel! {
-        get { $textPresenter.textLabel }
-        set { $textPresenter.textLabel = newValue }
+    private var observeResultLabel: UILabel! {
+        get { $textPresenter.observeResultLabel }
+        set { $textPresenter.observeResultLabel = newValue }
     }
     
     @IBOutlet
-    private var generateButton: UIButton! {
-        get { $buttonPresenter.generateButton }
-        set { $buttonPresenter.generateButton = newValue }
+    private var fetchResultLabel: UILabel! {
+        get { $textPresenter.fetchResultLabel }
+        set { $textPresenter.fetchResultLabel = newValue }
+    }
+    
+    @IBOutlet
+    private var observeButton: UIButton! {
+        get { $buttonPresenter.observeButton }
+        set { $buttonPresenter.observeButton = newValue }
+    }
+    
+    @IBOutlet
+    private var requestButton: UIButton! {
+        get { $buttonPresenter.requestButton }
+        set { $buttonPresenter.requestButton = newValue }
     }
     
     @IBOutlet
@@ -38,12 +50,14 @@ final class MainViewController: UIViewController, MainScene {
     
     @Implementation(MainButtonPresenter())
     var buttonPresenter: MainButtonPresenting
-
+    
+    // MARK: Inherited
+    
     override
     func viewDidLoad() {
         super.viewDidLoad()
         reactor.scene = self
     }
-    
+        
 }
 
