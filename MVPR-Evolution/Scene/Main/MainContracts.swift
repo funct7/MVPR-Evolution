@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Base
+import MVPRKit
 
 protocol MainScene : BaseScene {
     var reactor: MainBehavior { get }

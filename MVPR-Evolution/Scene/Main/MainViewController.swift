@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Base
+import MVPRKit
 
 final class MainViewController: UIViewController, MainScene {
     

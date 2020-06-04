@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Base
+@testable import MVPRKit
 
 class BaseTests: XCTestCase {
 

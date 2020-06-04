@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Base
+import MVPRKit
 
 final class MainReactor : BaseReactor, MainBehavior {
     
