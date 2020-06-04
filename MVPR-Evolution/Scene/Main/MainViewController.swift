@@ -12,32 +12,31 @@ final class MainViewController: UIViewController, MainScene {
     
     @IBOutlet
     private var textLabel: UILabel! {
-        get { _textPresenter.textLabel }
-        set { _textPresenter.textLabel = newValue }
+        get { $textPresenter.textLabel }
+        set { $textPresenter.textLabel = newValue }
     }
     
     @IBOutlet
     private var generateButton: UIButton! {
-        get { _buttonPresenter.generateButton }
-        set { _buttonPresenter.generateButton = newValue }
+        get { $buttonPresenter.generateButton }
+        set { $buttonPresenter.generateButton = newValue }
     }
     
     @IBOutlet
     private var changeColorButton: UIButton! {
-        get { _buttonPresenter.changeColorButton }
-        set { _buttonPresenter.changeColorButton = newValue }
+        get { $buttonPresenter.changeColorButton }
+        set { $buttonPresenter.changeColorButton = newValue }
     }
-    
     
     // MARK: Scene
     
     let reactor: MainBehavior = MainReactor()
     
-    var textPresenter: MainTextPresenting { return _textPresenter }
-    private let _textPresenter = MainTextPresenter()
+    @Implementation(MainTextPresenter())
+    var textPresenter: MainTextPresenting
     
-    var buttonPresenter: MainButtonPresenting { return _buttonPresenter }
-    private lazy var _buttonPresenter = MainButtonPresenter(queue: reactor.queue)
+    @Implementation(MainButtonPresenter())
+    var buttonPresenter: MainButtonPresenting
 
     override
     func viewDidLoad() {

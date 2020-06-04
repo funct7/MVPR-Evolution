@@ -8,19 +8,19 @@
 
 import Foundation
 
-protocol MainScene : NSObjectProtocol {
+protocol MainScene : BaseScene {
     var reactor: MainBehavior { get }
     
     var textPresenter: MainTextPresenting { get }
     var buttonPresenter: MainButtonPresenting { get }
 }
 
-protocol MainBehavior : BaseBehavior {
+protocol MainBehavior : BaseReactorType {
     var scene: MainScene! { get set }
     var worker: MainWorker { get set }
 }
 
-protocol MainWorkerEventHandler : class {
+protocol MainWorkerEventHandler : BaseEventHandler {
     func onFetch(worker: MainWorker, text: String)
     func onFetchFailure(worker: MainWorker, error: Error)
 }
@@ -35,7 +35,7 @@ protocol MainTextPresenting : class {
     func showText(_ text: String)
 }
 
-protocol MainButtonEventHandler : class {
+protocol MainButtonEventHandler : BaseEventHandler {
     func onTapGenerate(presenter: MainButtonPresenting)
     func onTapChangeColor(presenter: MainButtonPresenting)
 }

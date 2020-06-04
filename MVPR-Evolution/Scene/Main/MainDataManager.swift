@@ -12,7 +12,7 @@ final class MainDataManager : MainWorker {
 
     weak var handler: MainWorkerEventHandler!
     
-    func fetchText() -> String{
+    func fetchText() -> String {
         sleep(3)
         let result = UUID().uuidString
         handler.onFetch(worker: self, text: result)

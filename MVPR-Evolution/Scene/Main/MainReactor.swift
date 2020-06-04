@@ -8,14 +8,7 @@
 
 import Foundation
 
-private let ui = DispatchQueue.main
-
-final class MainReactor : MainBehavior {
-    
-    let queue: DispatchQueue = .init(
-        label: "workerQueue.MainScene",
-        qos: .userInteractive,
-        attributes: .concurrent)
+final class MainReactor : BaseReactor, MainBehavior {
     
     weak var scene: MainScene! {
         didSet {
@@ -43,18 +36,18 @@ extension MainReactor : MainWorkerEventHandler {
 extension MainReactor : MainButtonEventHandler {
     
     func onTapGenerate(presenter: MainButtonPresenting) {
-        ui.sync { presenter.isEnabled = false }
+        dispatcher.ui { presenter.isEnabled = false }
         
         let text = scene.reactor.worker.fetchText()
         
-        ui.sync { [scene] in
+        dispatcher.ui { [scene] in
             scene?.textPresenter.showText(text)
             presenter.isEnabled = true
         }
     }
     
     func onTapChangeColor(presenter: MainButtonPresenting) {
-        ui.sync { [scene] in scene?.textPresenter.changeColor() }
+        dispatcher.ui(with: scene) { $0.textPresenter.changeColor() }
     }
     
 }

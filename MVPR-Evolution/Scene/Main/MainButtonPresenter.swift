@@ -8,7 +8,9 @@
 
 import UIKit
 
-final class MainButtonPresenter : BasePresenter<MainButtonEventHandler>, MainButtonPresenting {
+final class MainButtonPresenter : MainButtonPresenting {
+    
+    weak var handler: MainButtonEventHandler?
     
     weak var generateButton: UIButton! {
         didSet {
@@ -40,12 +42,12 @@ private extension MainButtonPresenter {
     
     @objc
     func generateAction() {
-        call { $0.onTapGenerate(presenter: self) }
+        handler?.call { $0.onTapGenerate(presenter: self) }
     }
     
     @objc
     func changeColorAction() {
-        call { $0.onTapChangeColor(presenter: self) }
+        handler?.call { $0.onTapChangeColor(presenter: self) }
     }
     
 }
