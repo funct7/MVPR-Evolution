@@ -21,3 +21,29 @@ public class AsyncResult<T> {
     }
     
 }
+
+extension AsyncResult {
+    
+    static func with<U>(
+        _ params: U,
+        on queue: DispatchQueue = .main,
+        _ block: @escaping (AsyncResult<T>, U) -> Void) -> T
+    {
+        var result: T? = nil
+        let group = DispatchGroup()
+        group.enter()
+        let async = AsyncResult<T> {
+            result = $0
+            group.leave()
+        }
+        
+        queue.async {
+            block(async, params)
+        }
+        
+        group.wait()
+
+        return result!
+    }
+    
+}
