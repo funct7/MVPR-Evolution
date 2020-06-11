@@ -24,8 +24,16 @@ public class AsyncResult<T> {
 
 extension AsyncResult {
     
-    static public func with<U>(
-        _ params: U,
+    /**
+     호출하는 스레드에서는 대기를 하면서 결과를 받음.
+     
+     - Parameters:
+        - input: `block`의 입력값.
+        - queue: `block` task를 추가할 queue.
+        - block: 실행할 코드.
+     */
+    static public func get<U>(
+        input: U,
         on queue: DispatchQueue = .main,
         _ block: @escaping (AsyncResult<T>, U) -> Void) -> T
     {
@@ -38,7 +46,7 @@ extension AsyncResult {
         }
         
         queue.async {
-            block(async, params)
+            block(async, input)
         }
         
         group.wait()
