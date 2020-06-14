@@ -21,13 +21,21 @@ public struct Dispatcher {
         run { block(input) }
     }
     
+    public func only(_ block: @escaping () -> Void) {
+        worker.async(flags: .barrier) { block() }
+    }
+    
+    public func only<T>(with input: T, _ block: @escaping (T) -> Void) {
+        only { block(input) }
+    }
+    
     @discardableResult
     public func run<T, U>(
         with input: T,
         _ block: @escaping (T, AsyncResult<U>) -> Void)
         -> U
     {
-        return _runBlocking(input: input, queue: worker, block: block)
+        return _runWaiting(input: input, queue: worker, block: block)
     }
     
     public func ui(_ block: @escaping () -> Void) {
@@ -44,13 +52,13 @@ public struct Dispatcher {
         _ block: @escaping (T, AsyncResult<U>) -> Void)
         -> U
     {
-        return _runBlocking(input: input, queue: ui, block: block)
+        return _runWaiting(input: input, queue: ui, block: block)
     }
 }
 
 private extension Dispatcher {
     
-    func _runBlocking<T, U>(
+    func _runWaiting<T, U>(
         input: T,
         queue: DispatchQueue,
         block: @escaping (T, AsyncResult<U>) -> Void)
