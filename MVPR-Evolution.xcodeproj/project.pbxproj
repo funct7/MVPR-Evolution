@@ -29,7 +29,6 @@
 		03E4B9E6248886E10099DCBA /* LateInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4B9AB24886C590099DCBA /* LateInit.swift */; };
 		03E4B9E7248886E10099DCBA /* SafeLateInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4B9AD24886C6A0099DCBA /* SafeLateInit.swift */; };
 		03E4B9E8248886E90099DCBA /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4B9B124886CF90099DCBA /* Dispatcher.swift */; };
-		03E4B9E9248886E90099DCBA /* AsyncResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4B9B324886D1F0099DCBA /* AsyncResult.swift */; };
 		03E4B9EA248886E90099DCBA /* BaseReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4B9B6248879E80099DCBA /* BaseReactor.swift */; };
 		03E4B9EB248886E90099DCBA /* BaseEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4B9B824887A190099DCBA /* BaseEventHandler.swift */; };
 		03E4B9EC248886E90099DCBA /* BaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4B9BA24887A460099DCBA /* BaseScene.swift */; };
@@ -104,7 +103,6 @@
 		03E4B9AB24886C590099DCBA /* LateInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateInit.swift; sourceTree = "<group>"; };
 		03E4B9AD24886C6A0099DCBA /* SafeLateInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeLateInit.swift; sourceTree = "<group>"; };
 		03E4B9B124886CF90099DCBA /* Dispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
-		03E4B9B324886D1F0099DCBA /* AsyncResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncResult.swift; sourceTree = "<group>"; };
 		03E4B9B6248879E80099DCBA /* BaseReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseReactor.swift; sourceTree = "<group>"; };
 		03E4B9B824887A190099DCBA /* BaseEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEventHandler.swift; sourceTree = "<group>"; };
 		03E4B9BA24887A460099DCBA /* BaseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScene.swift; sourceTree = "<group>"; };
@@ -270,7 +268,6 @@
 			isa = PBXGroup;
 			children = (
 				03E4B9B124886CF90099DCBA /* Dispatcher.swift */,
-				03E4B9B324886D1F0099DCBA /* AsyncResult.swift */,
 				03E4B9B6248879E80099DCBA /* BaseReactor.swift */,
 				03E4B9B824887A190099DCBA /* BaseEventHandler.swift */,
 				03E4B9BA24887A460099DCBA /* BaseScene.swift */,
@@ -495,7 +492,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03E4B9E9248886E90099DCBA /* AsyncResult.swift in Sources */,
 				03E4B9E3248886DC0099DCBA /* SafeReference.swift in Sources */,
 				03E4B9E5248886DC0099DCBA /* Implementation.swift in Sources */,
 				03D3F84F24F295570019B303 /* Deferred.swift in Sources */,
