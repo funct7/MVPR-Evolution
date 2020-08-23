@@ -12,28 +12,28 @@ public protocol BaseScene : class {
     
     func displayError(_ error: Error)
     
-    func displayError(
-        _ error: Error,
-        result: AsyncResult<Int>)
+    /**
+     - Returns: A `Deferred` instance whose result is the index of the action that was selected.
+     */
+    func displayErrorForResult(_ error: Error) -> Deferred<Int>
     
 }
 
 public extension BaseScene where Self : UIViewController {
     
     func displayError(_ error: Error) {
-        _displayError(error, result: nil)
+        _displayError(error)
     }
     
-    func displayError(
-        _ error: Error,
-        result: AsyncResult<Int>)
-    {
+    func displayErrorForResult(_ error: Error) -> Deferred<Int> {
+        let result = Deferred<Int>()
         _displayError(error, result: result)
+        return result
     }
     
     private func _displayError(
         _ error: Error,
-        result: AsyncResult<Int>?)
+        result: Deferred<Int>? = nil)
     {
         let ac = UIAlertController(
             title: nil,
@@ -44,7 +44,8 @@ public extension BaseScene where Self : UIViewController {
             title: "OK",
             style: .default)
         { (_) in
-            result?.done(result: 0)
+            guard let result = result else { return }
+            Deferred.resolve(result, with: 0)
         }
         
         ac.addAction(action)
