@@ -15,6 +15,7 @@
 		034891A22443F61E00A08075 /* MainContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034891A12443F61E00A08075 /* MainContracts.swift */; };
 		0374BD3B2491EA7B003CFB42 /* BlockingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0374BD3A2491EA7B003CFB42 /* BlockingResult.swift */; };
 		03D3F84F24F295570019B303 /* Deferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D3F84E24F295570019B303 /* Deferred.swift */; };
+		03D3F85224F2A5330019B303 /* BaseReactor+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D3F85124F2A5330019B303 /* BaseReactor+Default.swift */; };
 		03DE93AE24440128001570A4 /* MainReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93AD24440128001570A4 /* MainReactor.swift */; };
 		03DE93B02444015D001570A4 /* MainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93AF2444015D001570A4 /* MainDataManager.swift */; };
 		03DE93B224440174001570A4 /* MainTextPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE93B124440174001570A4 /* MainTextPresenter.swift */; };
@@ -94,6 +95,7 @@
 		034891A42443F94700A08075 /* SafeReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeReference.swift; sourceTree = "<group>"; };
 		0374BD3A2491EA7B003CFB42 /* BlockingResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingResult.swift; sourceTree = "<group>"; };
 		03D3F84E24F295570019B303 /* Deferred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deferred.swift; sourceTree = "<group>"; };
+		03D3F85124F2A5330019B303 /* BaseReactor+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseReactor+Default.swift"; sourceTree = "<group>"; };
 		03DE93AD24440128001570A4 /* MainReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReactor.swift; sourceTree = "<group>"; };
 		03DE93AF2444015D001570A4 /* MainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataManager.swift; sourceTree = "<group>"; };
 		03DE93B124440174001570A4 /* MainTextPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextPresenter.swift; sourceTree = "<group>"; };
@@ -174,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				0348917F2443F0CA00A08075 /* Assets.xcassets */,
-				0348919A2443F1D100A08075 /* Extension */,
+				03D3F85024F2A5280019B303 /* Extension */,
 				0348919C2443F1E900A08075 /* Global */,
 				034891982443F1BF00A08075 /* Scene */,
 				03E4B9B024886CF00099DCBA /* PropertyWrapper */,
@@ -199,13 +201,6 @@
 				0348919D2443F21500A08075 /* Main */,
 			);
 			path = Scene;
-			sourceTree = "<group>";
-		};
-		0348919A2443F1D100A08075 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		0348919C2443F1E900A08075 /* Global */ = {
@@ -245,6 +240,14 @@
 				03E4B9A924886B8E0099DCBA /* Implementation.swift */,
 			);
 			path = ProprertyWrapper;
+			sourceTree = "<group>";
+		};
+		03D3F85024F2A5280019B303 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				03D3F85124F2A5330019B303 /* BaseReactor+Default.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		03E4B9AF24886C990099DCBA /* LateInit */ = {
@@ -477,6 +480,7 @@
 				03E4B9ED248887310099DCBA /* UpperBoundWrappingInt.swift in Sources */,
 				03DE93B02444015D001570A4 /* MainDataManager.swift in Sources */,
 				03DE93B424440187001570A4 /* MainButtonPresenter.swift in Sources */,
+				03D3F85224F2A5330019B303 /* BaseReactor+Default.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
