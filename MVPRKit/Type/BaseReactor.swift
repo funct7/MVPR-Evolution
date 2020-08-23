@@ -24,8 +24,10 @@ public extension BaseReactorType {
 
 open class BaseReactor : BaseReactorType {
     
-    public let dispatcher = Dispatcher(worker: .global(qos: .userInteractive))
+    public let dispatcher: Dispatcher
     
-    public init() { }
+    public init(dispatcher: Dispatcher) {
+        self.dispatcher = dispatcher
+    }
     
 }
