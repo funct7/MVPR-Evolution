@@ -51,6 +51,44 @@ final class MainViewController: UIViewController, MainScene {
     @Implementation(MainButtonPresenter())
     var buttonPresenter: MainButtonPresenting
     
+    func displayColorPicker() -> Deferred<UIColor> {
+        let result = Deferred<UIColor>()
+        
+        let ac = UIAlertController(
+            title: nil,
+            message: "Choose a background color",
+            preferredStyle: .actionSheet)
+        let action1 = UIAlertAction(
+            title: "red",
+            style: .default)
+        { (_) in
+            Deferred.resolve(result, with: .systemRed)
+        }
+        let action2 = UIAlertAction(
+            title: "green",
+            style: .default)
+        { (_) in
+            Deferred.resolve(result, with: .systemGreen)
+        }
+        let action3 = UIAlertAction(
+            title: "white",
+            style: .default)
+        { (_) in
+            Deferred.resolve(result, with: .white)
+        }
+        ac.addAction(action1)
+        ac.addAction(action2)
+        ac.addAction(action3)
+        
+        present(ac, animated: true)
+        
+        return result
+    }
+    
+    func setBackgroundColor(_ color: UIColor) {
+        view.backgroundColor = color
+    }
+    
     // MARK: Inherited
     
     override
@@ -58,6 +96,12 @@ final class MainViewController: UIViewController, MainScene {
         super.viewDidLoad()
         reactor.scene = self
     }
+    
+    // MARK: Private
+    
+    @IBAction
+    private func setBackgroundAction(_ sender: UIButton) {
+        reactor.call { $0.onTapChooseBackgroundColor() }
+    }
         
 }
-

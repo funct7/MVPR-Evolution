@@ -8,17 +8,23 @@
 
 import Foundation
 import MVPRKit
+import UIKit.UIColor
 
 protocol MainScene : BaseScene {
     var reactor: MainBehavior { get }
     
     var textPresenter: MainTextPresenting { get }
     var buttonPresenter: MainButtonPresenting { get }
+    
+    func displayColorPicker() -> Deferred<UIColor>
+    func setBackgroundColor(_ color: UIColor)
 }
 
 protocol MainBehavior : BaseReactorType {
     var scene: MainScene! { get set }
     var worker: MainWorker { get set }
+    
+    func onTapChooseBackgroundColor()
 }
 
 protocol MainWorkerEventHandler : BaseEventHandler {

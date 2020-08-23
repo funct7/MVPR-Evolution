@@ -20,6 +20,17 @@ final class MainReactor : BaseReactor, MainBehavior {
     
     var worker: MainWorker = MainDataManager()
     
+    func onTapChooseBackgroundColor() {
+        let result = dispatcher.ui.sync { scene.displayColorPicker() }
+        
+        do {
+            let result = try result.await()
+            dispatcher.ui(with: scene) { $0?.setBackgroundColor(result) }
+        } catch {
+            dispatcher.ui(with: scene) { $0?.displayError(error) }
+        }
+    }
+    
 }
 
 extension MainReactor : MainWorkerEventHandler {
